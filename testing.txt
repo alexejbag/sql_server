@@ -1,0 +1,43 @@
+=====(тест №1)=====
+
+CREATE TABLE stud(id LONG, name TEXT (15))
+INSERT INTO stud(1, 'alexey')
+INSERT INTO stud(2, 'mark')
+INSERT INTO stud(3, 'andrey')
+SELECT * FROM stud WHERE ALL
+UPDATE stud SET id = 0 WHERE (id = 1)
+SELECT * FROM stud WHERE ALL
+DROP TABLE stud
+// DELETE FROM stud WHERE (id = 3) // или, например, DELETE FROM stud WHERE id IN (3, 4)
+
+=====(тест №1)=====
+
+
+
+=====(тест №2, из методички)=====
+
+CREATE TABLE students (firstname TEXT (10), secondname TEXT (15), age LONG, phone TEXT (11))
+INSERT INTO students ( 'Sergey', 'Ivanov', 18, '145-45-45' )
+INSERT INTO students ( 'Alexey', 'Petrov', 20, '343-65-45' )
+INSERT INTO students ( 'Andrey', 'Fedorov', 23, '123-45-18' )
+INSERT INTO students ( 'Alexandre', 'Zaharov', 20, '345-33-33' )
+SELECT * FROM students WHERE ALL
+SELECT firstname, secondname FROM students WHERE age IN  (18, 19, 20)
+SELECT firstname, secondname, age FROM students WHERE age IN  (18, 19, 20)
+SELECT phone FROM students WHERE (secondname = 'Ivanov')
+SELECT secondname FROM students WHERE ALL
+SELECT secondname, phone FROM students WHERE (age > 19) AND (secondname > 'M')
+UPDATE students SET age = 30 WHERE ALL
+DELETE FROM students WHERE (firstname = 'Sergey')
+DELETE FROM students WHERE (secondname = 'Zaharov')
+DELETE FROM students WHERE (phone = '123-45-18')
+SELECT * FROM students WHERE ALL
+DROP TABLE students
+
+=====(тест №2, из методички)=====
+
+
+
+
+
+
